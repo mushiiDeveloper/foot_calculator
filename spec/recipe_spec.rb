@@ -1,6 +1,5 @@
 require 'recipe'
 describe Recipe do
-
   let(:pomid) {Ingredient.new(name: 'Tomato', cost: 100)}
   let(:pomid_quantity) {2.times do
     IngredientQuantity.new(ingredient: pomid, quanity: 200)
@@ -13,7 +12,7 @@ describe Recipe do
   describe "#total_cost" do
     context 'when return total price' do
       it 'should be 80 grn ' do
-      ingredients.total_cost.should == 40
+        ingredients.total_cost.should == 40
       end
     end
   end
@@ -25,5 +24,4 @@ describe Recipe do
       end
     end
   end
-
 end
