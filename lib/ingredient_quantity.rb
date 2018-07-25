@@ -7,6 +7,6 @@ class IngredientQuantity
   end
 
   def total_cost
-    @ingredient.cost * (0.001*@quanity)
+    @ingredient.cost * (0.001 * @quanity)
   end
 end

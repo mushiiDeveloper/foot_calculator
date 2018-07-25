@@ -6,4 +6,7 @@ class Recipe
     @serving_count = hash[:serving_count]
     @ingredient_quantities = hash[:ingredient_quantities]
   end
+
+  def total_cost
+  end
 end
