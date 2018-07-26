@@ -6,7 +6,12 @@ class Ingredient
     @cost = hash[:cost]
   end
 
-  def ==
-
+  def ==(obj)
+  if self.__id__ != obj.__id__ && self.name == obj.name && self.cost == obj.cost
+    true
+  else
+    false
+  end
   end
 end
+

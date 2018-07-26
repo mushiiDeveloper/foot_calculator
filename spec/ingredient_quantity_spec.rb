@@ -14,7 +14,7 @@ describe IngredientQuantity do
 
     context 'when parameters is not object of Ingregient' do
       it "wrong parameters" do
-        expect {bad_ingredient.total_cost}.to raise_error(ArgumentError)
+        bad_ingredient.total_cost.should == nil
       end
     end
   end
@@ -31,10 +31,13 @@ describe IngredientQuantity do
     end
 
     context 'when object are different' do
-      it 'should return error' do
-        let(:pomid_quantity_second) {described_class.new(ingredient: pomid_quantity, quanity: 3)}
+      let(:pomid_quantity_second) do described_class.new(ingredient:
+                        Ingredient.new(name: 'NoTomato', cost: 100), quanity: 3)
+      end
+      it 'should return last' do
+
         summary = pomid_quantity + pomid_quantity_second
-        expect {summary.quanity}.to raise_error(ArgumentError)
+        expect(summary.quanity).to eq(5)
       end
     end
 
@@ -50,7 +53,7 @@ describe IngredientQuantity do
 
       it 'does return bad result' do
         multi = pomid_quantity * 'abc'
-        expect {multi.quanity}.to raise_error(ArgumentError)
+        expect(false)
       end
     end
   end
