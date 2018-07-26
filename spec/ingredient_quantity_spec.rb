@@ -1,4 +1,5 @@
 require 'ingredient_quantity'
+load 'ingredient.rb'
 describe IngredientQuantity do
   let(:pomid) {Ingredient.new(name: 'Tomato', cost: 100)}
   describe '#total_cost' do

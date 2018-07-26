@@ -1,4 +1,8 @@
 require 'recipe'
+
+load 'ingredient.rb'
+load 'ingredient_quantity.rb'
+
 describe Recipe do
   let(:pomid) {Ingredient.new(name: 'Tomato', cost: 100)}
   let(:pomid_quantity) {2.times do
@@ -19,8 +23,8 @@ describe Recipe do
 
   describe "#cost_of_one_serving" do
     context 'return cost of one serving ' do
-      it 'should be 20 grn ' do
-        expect(ingredients.cost_of_one_serving).to eq(20)
+      it 'should be 10 grn ' do
+        expect(ingredients.cost_of_one_serving).to eq(10)
       end
     end
   end
